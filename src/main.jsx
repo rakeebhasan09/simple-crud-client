@@ -8,6 +8,7 @@ import MainLayout from "./LayOuts/MainLayout";
 import Home from "./components/Home";
 import AddUser from "./components/AddUser";
 import Users from "./components/Users";
+import UserDetails from "./components/UserDetails";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
 				path: "users",
 				loader: () => fetch("http://localhost:3000/users"),
 				Component: Users,
+			},
+			{
+				path: "user-details/:id",
+				loader: ({ params }) =>
+					fetch(`http://localhost:3000/users/${params.id}`),
+				Component: UserDetails,
 			},
 		],
 	},
