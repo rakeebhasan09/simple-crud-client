@@ -54,9 +54,12 @@ const Users = () => {
 									>
 										<IoMdEye className="text-[22px] text-white" />
 									</Link>
-									<button className="bg-[#DDA000] h-9 px-2 rounded cursor-pointer">
+									<Link
+										to={`/update-user/${user._id}`}
+										className="bg-[#DDA000] h-9 px-2 flex items-center justify-center rounded cursor-pointer"
+									>
 										<FaPen className="text-[20px] text-white" />
-									</button>
+									</Link>
 									<button
 										onClick={() =>
 											handleDeleteUser(user._id)

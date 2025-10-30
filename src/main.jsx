@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import AddUser from "./components/AddUser";
 import Users from "./components/Users";
 import UserDetails from "./components/UserDetails";
+import UpdateUser from "./components/UpdateUser";
 
 const router = createBrowserRouter([
 	{
@@ -33,6 +34,12 @@ const router = createBrowserRouter([
 				loader: ({ params }) =>
 					fetch(`http://localhost:3000/users/${params.id}`),
 				Component: UserDetails,
+			},
+			{
+				path: "update-user/:id",
+				loader: ({ params }) =>
+					fetch(`http://localhost:3000/users/${params.id}`),
+				Component: UpdateUser,
 			},
 		],
 	},
